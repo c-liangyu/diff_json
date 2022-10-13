@@ -1,0 +1,36 @@
+{
+    "userLabels": [
+
+    ],
+    "aceId": 257,
+    "aceInstance": "dgx1v.16g.4.norm",
+    "dockerImageName": "nvidian/nvr-av/video-diffusion:0.2",
+    "aceName": "nv-us-west-2",
+    "systemLabels": [
+
+    ],
+    "datasetMounts": [{
+        "containerMountPoint": "/workspace/data",
+        "id": 108626
+    }],
+    "workspaceMounts": [{
+        "containerMountPoint": "/workspace",
+        "id": "video-diffusion-full",
+        "mountMode": "RW"
+    }],
+    "replicaCount": 1,
+    "publishedContainerPorts": [
+        8888
+    ],
+    "reservedLabels": [
+
+    ],
+    "name": "ml-model.decision-transformer-jupyter",
+    "command": "cd /workspace/video-diffusion && pip install -e . && NO_MPI=1 WANDB_API_KEY=c595e7efe9bbd1b1e0ca021c5e53e979394e53f0 python -m torch.distributed.run --nproc_per_node 4 scripts/video_train.py --dataset carla_no_traffic --batch_size 1 --max_frames 20 --observed_frames hybrid_500 --num_res_blocks 1 --data_path /workspace/data --mask_distribution autoregressive-10 --num_workers 14",
+    "runPolicy": {
+        "minTimesliceSeconds": 1,
+        "totalRuntimeSeconds": 409200,
+        "preemptClass": "RUNONCE"
+    },
+    "resultContainerMountPoint": "/results"
+}
