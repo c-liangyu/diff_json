@@ -3,7 +3,7 @@
 
     ],
     "aceId": 257,
-    "aceInstance": "dgx1v.16g.4.norm",
+    "aceInstance": "dgx1v.32g.4.norm",
     "dockerImageName": "nvidian/nvr-av/video-diffusion:0.2",
     "aceName": "nv-us-west-2",
     "systemLabels": [
