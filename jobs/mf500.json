@@ -26,7 +26,7 @@
 
     ],
     "name": "ml-model.decision-transformer-jupyter",
-    "command": "cd /workspace/video-diffusion && pip install -e . && WANDB_RUN_ID=mf500 NO_MPI=1 WANDB_API_KEY=c595e7efe9bbd1b1e0ca021c5e53e979394e53f0 python -m torch.distributed.run --nproc_per_node 4 scripts/video_train.py --dataset minerl --batch_size 8 --max_frames 20 --observed_frames hybrid_500 --num_res_blocks 1 --data_path /workspace/data/ --num_workers 14",
+    "command": "cd /workspace/video-diffusion && pip install -e . && WANDB_RUN_ID=mf500 NO_MPI=1 WANDB_API_KEY=c595e7efe9bbd1b1e0ca021c5e53e979394e53f0 python -m torch.distributed.run --nproc_per_node 4 scripts/video_train.py --dataset minerl --batch_size 4 --max_frames 20 --observed_frames hybrid_500 --num_res_blocks 1 --data_path /workspace/data/ --num_workers 14",
     "runPolicy": {
         "minTimesliceSeconds": 1,
         "totalRuntimeSeconds": 409200,
